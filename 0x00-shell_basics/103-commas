@@ -1,2 +1,2 @@
 #!/bin/bash
-printf "./\n../\n$(ls -a1p | grep -v '^\.$' | grep -v '^\.\.$' | sort -d -f --field-separator=/ --key=1,1 --key=2n | tr '\n' ',' | sed 's/,$//')\n"
+ls -amvp
