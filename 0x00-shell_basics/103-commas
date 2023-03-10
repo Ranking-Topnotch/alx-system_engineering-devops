@@ -1,3 +1,2 @@
 #!/bin/bash
-ls -1ap | grep -v '^\./\.\{0,1\}$' | sed -e 's/[^[:alnum:]\.\/]/,/g' -e 's/\(.*\)\/$/\1\//g' | LC_ALL=C sort -df -k1 | tr '\n' ','; echo
-
+ls -1Ap | sort -d --field-separator=/ --key=1,1 --key=2n | tr '\n' ',' ; echo
