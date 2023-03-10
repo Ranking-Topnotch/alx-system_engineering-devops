@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -1Ap | sort -d --field-separator=/ --key=1,1 --key=2n | tr '\n' ',' ; echo
+printf "./\n../\n$(ls -1Ap | grep -v '^\.$' | grep -v '^\.\.$' | sort -d --field-separator=/ --key=1,1 --key=2n | tr '\n' ',' | sed 's/,$//')\n"
